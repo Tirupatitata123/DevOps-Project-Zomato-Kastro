@@ -79,7 +79,7 @@ pipeline {
             steps {
                     sh """
                     if [ \$(docker ps -aq -f name=zomato) ]; then
-                        docker rm -f starbucks
+                        docker rm -f zomato
                     fi
                     """
                 sh 'docker run -d --name zomato -p 3000:3000 tirupatipallu/zomato:latest'
@@ -105,7 +105,7 @@ pipeline {
                 </body>
                 </html>
             """,
-            to: 'kastrokiran@gmail.com',
+            to: 'boyane9689@gmail.com',
             mimeType: 'text/html',
             attachmentsPattern: 'trivy.txt'
         }
